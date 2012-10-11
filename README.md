@@ -1,64 +1,63 @@
-# JavaScript Quiz
+# JavaScript 测试
 
-**Note:**
+**说明:**
 
-The purpose of this quiz isn't to be a brain-buster. It is meant for recruiters to present to front-end developer candidates.
+这个测试不是玩一些奇javascript淫技巧来让颇费思量，而是用来方便招聘人员筛选前端开发人员，其主要目的就是为了pass掉那些只会用jQuery而不懂javaScript底层的应聘者。
 
-The intent is to weed out some "Just use jQuery" applicants, but allow those that know JavaScript to pass fairly easily.
 
 ## Intro Questions
 
 01. When might comparative type coercion occur? How would you avoid it? How would you change a "falsy" or "truthy" value into a real boolean?
 
-02. Describe how variable scope works. Explain how to create a closure using a self-executing anonymous function (also called IIFE: immediately-invoked function expression).
+02. 描述下变量作用域是怎么工作的，如何用匿名函数去创建一个能立即执行的闭包。
 
-03. Explain briefly how prototypal inheritance differs from class-based, "classical" inheritance.
+03. 简要介绍下原型继承和传统的类继承的区别
 
 04. Describe how the "module pattern" works. Explain how the "revealing module pattern" expands upon it.
 
-05. How does a client-side MVC (or MVVM) approach work? What is your preferred MV* JS framework?
+05. 浏览器端的MVC(或者MVVM)工作机制是什么？你用过哪些MVC(MVVM) JS框架？
 
-## Additional Questions
+## 附加问题
 
-06. Why do these yield different results?
-
-    ```js
-    '1' + 2 +  3 ; // Equals '123'
-     3  + 2 + '1'; // Equals '51'
-     3  + 2 +  1 ; // Equals 6
-    ```
-
-07. Why is `0.3` *not* the result of the following addition? How do you work around this peculiarity?
+06. 以下计算结果为啥不同？
 
     ```js
-    0.1 + 0.2; // Equals 0.30000000000000004
+    '1' + 2 +  3 ; // 等于 '123'
+     3  + 2 + '1'; // 等于 '51'
+     3  + 2 +  1 ; // 等于 6
     ```
 
-08. Describe how variable hoisting works, and how to avoid bugs that may arise from it.
+07. 为什么 `0.3` *不是* 预期的计算结果，如何得到正确的计算结果呢？
 
-09. How do these differ?
+    ```js
+    0.1 + 0.2; // 结果为 0.30000000000000004
+    ```
+
+08.  描述下什么是变量声明提升(variable hoisting),如何避免变量生命提升可能导致的问题？
+
+09. 如下的代码有什么区别？
 
     ```js
     function foo() {}
 
-    // versus
+    // 另外一种写法
 
     var foo = function() {};
     ```
 
-10. When might you use a function's `call()` method, or its `apply()` method?
+10. 什么时候用call函数，什么时候用apply函数，它们有啥区别？
 
-11. Explain how to determine if a variable is an array or an object. (*Hint:* `typeof` lies!)
+11. 如何判断一个变量是对象还是数组. (*提示:* `typeof` 返回结果不一定准确!)
 
-12. In the following example, what is foo aliased to? (*Hint:* It is what `this` means.)
+12. 在下面的代码中，foo代表什么? (*提示:* 需要弄清楚 `this` 代表什么.)
 
     ```js
     (function(foo) {
-      // What is 'foo' aliased to?
+      // 'foo'指代什么？
     })(this);
     ```
 
-13. In JavaScript (and the DOM), some global variables are actually mutable, such as: `window`, `document`, and `undefined`. How would you write code to ensure these were predictably available for use? Assuming someone had injected this code, how would you work around it? (*Hint:* See the previous question.)
+13. 在Javascript(和DOM)中，一些诸如`window`、`document`、`undefined`的全局变量并不是一成不变的，用户可能会对它们重新赋值，如何保证我们用的这些内置变量是最原始的值而不是用户修改过的(*提示:* 参考上一个问题 )，如下面的代码所示：
 
     ```js
     var window = '';
@@ -66,13 +65,13 @@ The intent is to weed out some "Just use jQuery" applicants, but allow those tha
     var undefined = true;
     ```
 
-14. In one line of code, how you would make a copy of an array?
+14. 请用一句代码来复制一个数组
 
-15. What is the difference between `setInterval` and `setTimeout`? *Bonus:* What is the lowest cross-browser increment that each can accurately use?
+15. What is the difference between `setInterval` and `setTimeout`? *Bonus:* What is the lowest cross-browser increment that each can accurately use? `setInterval`和 `setTimeout`有啥区别? 
 
-16. Explain how `delete` works. What types of things cannot be deleted?
+16. 解释下`delete`是如何工作的，什么类型的变量不可删除?
 
-17. Describe how event delegation works, and when you should use it to handle UI interaction. Example markup&hellip;
+17. 解释下事件委托是如何工作的，在UI交互时，什么情况下该用事件委托呢？如下面的例子所示&hellip;
 
     ```html
     <ul id="special">
@@ -88,36 +87,36 @@ The intent is to weed out some "Just use jQuery" applicants, but allow those tha
     </ul>
     ```
 
-18. What does this snippet of code do?
+18. 下面代码的作用是什么?
 
     ```js
     var foo = bar ? bar : 0;
     ```
 
-19. When might you write something like this, and what is it shorthand for?
+19. 你在什么情况下会写下面的代码？这样的代码可能存在什么问题？
 
     ```js
     foo && foo.bar();
     ```
 
-20. How do `parseInt` and `parseFloat` differ? When would you use a number's `toFixed()` method? In what instance might the following code snippet actually make sense to use?
+20. `parseInt` 和`parseFloat` 有啥区别? 什么时候需要调用数字的`toFixed()`方法? 下面的代码在什么情况下会有用处?
 
     ```js
     var my_number = my_string - 0;
     ```
 
-21. Write a function named `sum` that returns the total of any number of parameters. Example&hellip;
+21. 写一个名为 `sum` 的函数，它能返回所有参数的总和. 使用如下所示&hellip;
 
     ```js
-    // Should equal 15
+    // 结果为15
     sum(1, 2, 3, 4, 5);
 
-    // Should equal 0
+    // 结果为0
     sum(5, null, -5);
 
-    // Should equal 10
+    // 结果为10
     sum('1.0', false, 1, true, 1, 'A', 1, 'B', 1, 'C', 1, 'D', 1, 'E', 1, 'F', 1, 'G', 1);
 
-    // Should equal 0.3, not 0.30000000000000004
+    // 结果为 0.3, 而不是 0.30000000000000004
     sum(0.1, 0.2);
     ```
