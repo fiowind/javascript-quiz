@@ -2,18 +2,18 @@
 
 **说明:**
 
-这个测试不是玩一些奇淫技巧来让颇费思量，而是用来方便招聘人员筛选前端开发人员，其主要目的就是为了pass掉那些只会用jQuery而不懂javaScript底层的应聘者。
+这个测试不是玩一些奇淫技巧来让你颇费思量，而是用来方便招聘人员筛选前端开发人员，其主要目的就是为了pass掉那些只会用jQuery而不懂javaScript底层的应聘者。
 
 
-## Intro Questions
+## 基本问题
 
-01. When might comparative type coercion occur? How would you avoid it? How would you change a "falsy" or "truthy" value into a real boolean?
+01. 两个变量比较时，在什么情况下会发生变量类型的强制转换? 如何去避免这种强制转换呢? 如何将一个变量值(若`"false"`、`"true"`、`"0"`、`"1"`等)转换为真正的布尔值呢?
 
 02. 描述下变量作用域是怎么工作的，如何用匿名函数去创建一个能立即执行的闭包。
 
-03. 简要介绍下原型继承和传统的类继承的区别
+03. 简要介绍下原型继承和传统的类继承的区别。
 
-04. Describe how the "module pattern" works. Explain how the "revealing module pattern" expands upon it.
+04. 描述下什么是“模块化模式”(module pattern)，以及基于其之上的“揭示模块化模式”(revealing module pattern)。
 
 05. 浏览器端的MVC(或者MVVM)工作机制是什么？你用过哪些MVC(MVVM) JS框架？
 
@@ -49,7 +49,7 @@
 
 11. 如何判断一个变量是对象还是数组. (*提示:* `typeof` 返回结果不一定准确!)
 
-12. 在下面的代码中，foo代表什么? (*提示:* 需要弄清楚 `this` 代表什么.)
+12. 在下面的代码中，foo代表什么? (*提示:* 需要弄清楚 `this` 代表什么。)
 
     ```js
     (function(foo) {
