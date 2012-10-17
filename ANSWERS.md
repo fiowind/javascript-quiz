@@ -1,35 +1,34 @@
-# JavaScript Quiz &mdash; with Answers
+# JavaScript 测试及答案
 
-**Note:**
+**说明:**
 
-If you've skipped the questions and come straight here, or have found this page because you're trying to cheat: Tisk, tisk!
+如果你跳过了提问而直接跳转到这个页面，你一定是准备作弊了，哈哈！
 
-Joking aside though, if you're a job applicant skimming these answers so that you can make (fake?) it through an interview, bear in mind that a cheat sheet isn't the same as knowledge. You should still strive to understand these concepts.
+上面的话只是一句玩笑话，不过如果你真的想在面试中通过考核，仅仅记住这些答案是不够的，因为答案不等于真真的知识，你依然需要懂得它们的内在原理。知其然，还要知其所以然噢 **:)**
 
-**:)**
 
-## Intro Questions
+## 基本问题
 
-01. When might comparative type coercion occur? How would you avoid it? How would you change a "falsy" or "truthy" value into a real boolean?
+01. 两个变量比较时，在什么情况下会发生变量类型的强制转换? 如何去避免这种强制转换呢? 如何将一个变量值转换为布尔值(如`null`、`0`转换false、`1`转换为true)呢?
 
-    **Answer:**
+    **参考答案:**
 
-    Type coercion occurs when comparing values of different types. For instance, if you're comparing a number with a string, they will be changed on the fly (coerced) into a loose "truthy" or "falsy" comparison. To avoid type coercion, to ensure you are comparing values strictly and taking their potentially differing types into account, always use triple-equals `===` instead of the more commonly used (in other languages) double-equals `==`. Likewise, when comparing if two values are *not* the same, use `!==` instead of `!=`.
+    当比较两个不同类型的变量时会发生类型的强制转换。例如，当你将一个字符串和一个数字进行比较，字符串将会被强制转换为数字然后再进行比较。为了避免这种情况，在比较时需要将数据的类型考虑在内，所以应该总是用`===` 代替在其他语言中常用的`==`；同样的，比较两个*不相同*的值时，用`!==`代替`!=`。
 
     ```js
-    // This is good
+    // 推荐写法
     if (a === b) {}
     if (a !== b) {}
 
-    // This is bad
+    // 糟糕写法
     if (a == b) {}
     if (a != b) {}
     ```
 
-    Sometimes you will have a variable that may be "truthy" or "falsy" itself, but need to infer a real `true` or `false` boolean from it. In such cases, you can use double negation `!!`, to say "not not something," the result of which is either `true` or `false`.
+    有时我们需将一个变量转为布尔值，如`null`、`undefined`、`0`、`""`转为false，`1`、`"hello"`等非空字符串转换为1,我们可以使用`!!`来进行两次取非操作，这样返回的结果就是布尔值`true`或者`false`     
 
     ```js
-    // Is always a real boolean
+    // 总是返回一个bool值
     var real_boolean = !!something;
     ```
 
